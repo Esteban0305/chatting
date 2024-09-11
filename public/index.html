@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Chat</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="vh-100">
+    <div class="container d-flex d-none" id="loader" style="height: 100%;">
+        <div class="d-flex align-items-center mx-auto"><span class="spinner-border spinner-border-sm ms-auto" role="status"></span><span class="ms-2 me-auto">loading...</span></div>
+    </div>
+    <main class="h-100">
+        <div class="container py-3 d-flex flex-column h-100" id="register">
+            <h1 class="mt-auto">Turdo Chat</h1>
+            <p class="lead">Come here and chat with someone</p>
+            <div class="d-flex flex-column mb-auto"><label class="form-label">Username</label><input type="text" id="username" class="form-control" placeholder="Turdo" onenter="register()"><button class="btn btn-primary ms-auto mt-3" type="button" onclick="register()">Start chatting</button></div>
+        </div>
+        <div class="container-fluid h-100 py-5 d-none" id="clone">
+            <div class="row h-100">
+                <div class="col col-4 d-flex flex-column h-100" id="chats">
+                    <h2>Chats</h2>
+                    <div class="flex-grow-1 overflow-scroll h-100">
+                        <ul class="list-group" id="chat_list"></ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="no_chat" class="d-flex h-100">
+                        <p class="m-auto">Select someone to chat</p>
+                    </div>
+                    <div id="chat" class="d-flex flex-column rounded-2 overflow-hidden h-100 d-none">
+                        <div id="chat_header" class="bg-primary w-100 d-flex py-2">
+                            <p id="current_username_chat" class="text-white my-auto ms-3 lead">Turdo</p>
+                        </div>
+                        <div class="flex-grow-1 overflow-scroll h-100">
+                            <div id="chat_messages" class="d-flex flex-column-reverse py-3" style="max-height: 100%;"></div>
+                        </div>
+                        <div id="typer" class="d-flex align-items-end"><input type="text" id="message" class="form-control" placeholder="Type a message"><button class="btn btn-primary d-flex ms-2" type="button" onclick="sendMessage()"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-send my-auto me-2">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path>
+                                </svg>Send</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/vue.global.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
